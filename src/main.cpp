@@ -55,8 +55,7 @@ void onConnectionEstablished()
 	});
 
 	mqttClient.subscribe(BASE_TOPIC_SET "on", [](const String &payload) {
-		boolean value = payload != "0";
-		on = value;
+		on = payload == "1" || payload == "true";
 		mqttClient.publish(BASE_TOPIC_STATUS "on", String(on), MQTT_RETAINED);
 	});
 
