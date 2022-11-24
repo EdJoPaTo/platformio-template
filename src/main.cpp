@@ -49,8 +49,8 @@ void setup()
 void onConnectionEstablished()
 {
 	mqttClient.subscribe(BASE_TOPIC_SET "bri", [](const String &payload) {
-		int value = strtol(payload.c_str(), 0, 10);
-		mqttBri = max(1, min(255, value));
+		auto value = strtol(payload.c_str(), 0, 10);
+		mqttBri = max(1l, min(255l, value));
 		mqttClient.publish(BASE_TOPIC_STATUS "bri", String(mqttBri), MQTT_RETAINED);
 	});
 
@@ -80,8 +80,8 @@ void loop()
 	if (now >= nextMeasure)
 	{
 		nextMeasure = now + 5000;
-		long rssi = WiFi.RSSI();
-		float avgRssi = mkRssi.addMeasurement(rssi);
-		Serial.printf("RSSI          in dBm: %8ld    Average: %10.2f\n", rssi, avgRssi);
+		auto rssi = WiFi.RSSI();
+		auto avgRssi = mkRssi.addMeasurement(rssi);
+		Serial.printf("RSSI          in dBm: %8d    Average: %10.2f\n", rssi, avgRssi);
 	}
 }
