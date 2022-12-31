@@ -29,7 +29,7 @@ EspMQTTClient mqttClient(
 
 MQTTKalmanPublish mkRssi(mqttClient, BASE_TOPIC_STATUS "rssi", MQTT_RETAINED, 12 * 5 /* every 5 min */, 10);
 
-boolean on = true;
+bool on = true;
 uint8_t mqttBri = 1;
 
 void setup()
