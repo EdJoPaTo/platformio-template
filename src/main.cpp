@@ -2,7 +2,6 @@
 #include <EspMQTTClient.h>
 #include <MqttKalmanPublish.h>
 
-#define CLIENT_NAME "espTemplate"
 const bool MQTT_RETAINED = false;
 
 EspMQTTClient mqttClient(
