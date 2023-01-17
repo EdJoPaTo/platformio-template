@@ -10,9 +10,8 @@ EspMQTTClient mqttClient(
 	MQTT_SERVER,
 	MQTT_USERNAME,
 	MQTT_PASSWORD,
-	CLIENT_NAME, // Client name that uniquely identify your device
-	1883         // The MQTT port, default to 1883. this line can be omitted
-);
+	CLIENT_NAME,
+	1883);
 
 #define BASE_TOPIC CLIENT_NAME "/"
 #define BASE_TOPIC_SET BASE_TOPIC "set/"
