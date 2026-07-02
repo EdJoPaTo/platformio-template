@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   # Build regularly in order to check with new dependency versions
   schedule:
-    - cron: '42 2 * * 6' # weekly on Saturday 2:42 UTC
+    - cron: "42 2 * * 6" # weekly on Saturday 2:42 UTC
 
 permissions:
   contents: write
@@ -58,4 +58,4 @@ jobs:
         uses: softprops/action-gh-release@v3
         with:
           files: |
-             *.zip
+            *.zip
